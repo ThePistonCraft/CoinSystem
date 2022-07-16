@@ -1,0 +1,27 @@
+# Author: Coooding | DC: thepistoncraft#9392
+# Edit the Settings for setCoins by firstJoin
+Settings:
+  setJoinCoins: true
+  firstJoinCoins: 1000
+# Edit the Plugin Messages
+Messages:
+  prefix: '&8| &6Coins &8× &7'
+  noPermission: '&cDu hast dazu keine Rechte.'
+  haveCoins: 'Du hast &e%coins% Coins'
+  targetCoins: 'Der Spieler &e%targetPlayer% &7hat &e%coins% Coins'
+  targetIsNull: 'Der Spieler existiert nicht.'
+  playerIsNotInDatabase: 'Der Spieler ist nicht in der Coins Datenbank registriert'
+  commandSyntaxHelp: 'Bitte benutze&8: &e%commandSyntax%'
+  setCoinsByJoin: 'Dir wurden zum Start &e%amount% &7gutgeschrieben'
+  addPlayerCoins: 'Du hast dem Spieler &e%targetPlayer% &7insgesamt &e%amount% &7hinzugefügt'
+  setPlayerCoins: 'Du hast dem Spieler &e%targetPlayer% &7insgesamt &e%amount% &7gesetzt'
+  removePlayerCoins: 'Du hast dem Spieler &e%targetPlayer% &7insgesamt &e%amount% &7entfernt'
+  payPlayerCoinsTargetMessage: 'Der Spieler &e%targetPlayer% &7hat dir &e%amount% Coins &7gezahlt!'
+  payPlayerCoinsPlayerMessage: 'Du hast den Spieler &e%targetPlayer%&7, &e%amount% Coins &7gezahlt!'
+# Please insert your MySQL data here!
+MySQL:
+  host: 'localhost'
+  username: 'root'
+  port: '3306'
+  database: 'coins'
+  password: 'yourPassword'
