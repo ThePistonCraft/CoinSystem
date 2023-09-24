@@ -1,6 +1,6 @@
-package de.coooding.coinsapi.sql;
+package me.brofan11.erme.sql;
 
-import de.coooding.coinsapi.CoinsAPI;
+import me.brofan11.erme.ErmeAPI;
 
 import java.sql.*;
 
@@ -12,11 +12,11 @@ import java.sql.*;
  */
 public class MySQL {
 
-    public static String host = CoinsAPI.getInstance().getConfig().getString("MySQL.host");
-    public static String database = CoinsAPI.getInstance().getConfig().getString("MySQL.database");
-    public static String user = CoinsAPI.getInstance().getConfig().getString("MySQL.username");
-    public static String passwd = CoinsAPI.getInstance().getConfig().getString("MySQL.password");
-    public static String port = CoinsAPI.getInstance().getConfig().getString("MySQL.port");
+    public static String host = ErmeAPI.getInstance().getConfig().getString("MySQL.host");
+    public static String database = ErmeAPI.getInstance().getConfig().getString("MySQL.database");
+    public static String user = ErmeAPI.getInstance().getConfig().getString("MySQL.username");
+    public static String passwd = ErmeAPI.getInstance().getConfig().getString("MySQL.password");
+    public static String port = ErmeAPI.getInstance().getConfig().getString("MySQL.port");
     public static Connection connection;
 
     public static void connect() {
@@ -33,7 +33,7 @@ public class MySQL {
         try {
             if (MySQL.isConnected()) {
                 PreparedStatement createcoinsifnotexists = MySQL
-                        .getStatement("CREATE TABLE IF NOT EXISTS playerCoins (UUID VARCHAR(255), coins BIGINT(255))");
+                        .getStatement("CREATE TABLE IF NOT EXISTS ermetabla (UUID VARCHAR(255), erme BIGINT(255))");
                 createcoinsifnotexists.executeUpdate();
             }
         } catch (SQLException ignored) { }

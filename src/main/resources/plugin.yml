@@ -1,10 +1,20 @@
-name: CoinSystem
-version: 1.1
-main: de.coooding.coinsapi.CoinsAPI
-author: Coooding
+name: Erme
+version: 0.1
+main: me.brofan11.erme.CoinsAPI
+author: BroFan11
 commands:
-  addcoins:
-  removecoins:
-  setcoins:
-  coins:
-  pay:
+  adderme:
+    command: /<command>
+    aliases: [addérme, érmeadás, ermeadas, adás, hozzáadás]
+  removeerme:
+    command: /<command>
+    aliases: [removeérme, ermeelvetel, érmeelvétel, elvétel, elvetel]
+  seterme:
+    command: /<command>
+    aliases: [setérme, beállít, beállítás, beallit, beallitas]
+  erme:
+    command: /<command>
+    aliases: [érme, érméim, ermeim]
+  payerme:
+    command: /<command>
+    aliases: [payérme, utal, utalás]

@@ -1,10 +1,10 @@
-package de.coooding.coinsapi;
+package me.brofan11.erme;
 
-import de.coooding.coinsapi.commands.*;
-import de.coooding.coinsapi.listener.ConnectionListener;
-import de.coooding.coinsapi.sql.MySQL;
-import de.coooding.coinsapi.utils.YamlConfigurationLoader;
+import me.brofan11.erme.listener.ConnectionListener;
+import me.brofan11.erme.sql.MySQL;
+import me.brofan11.erme.utils.YamlConfigurationLoader;
 import lombok.Getter;
+import me.brofan11.erme.commands.*;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -14,11 +14,11 @@ import org.bukkit.plugin.java.JavaPlugin;
  *
  * @author ThePistonCraft (prinzmettwurst@web.de)
  */
-public class CoinsAPI
+public class ErmeAPI
         extends JavaPlugin {
 
     @Getter
-    public static CoinsAPI instance;
+    public static ErmeAPI instance;
     @Getter
     public String prefix = getConfig().getString("Messages.prefix").replaceAll("&", "§");
 
@@ -35,11 +35,11 @@ public class CoinsAPI
         MySQL.connect();
         MySQL.createTable();
 
-        getCommand("coins").setExecutor(new CoinsCommand());
-        getCommand("setcoins").setExecutor(new SetCoinsCommand());
-        getCommand("addcoins").setExecutor(new AddCoinsCommand());
-        getCommand("removecoins").setExecutor(new RemoveCoinsCommand());
-        getCommand("pay").setExecutor(new PayCommand());
+        getCommand("erme").setExecutor(new CoinsCommand());
+        getCommand("seterme").setExecutor(new SetCoinsCommand());
+        getCommand("adderme").setExecutor(new AddCoinsCommand());
+        getCommand("removeerme").setExecutor(new RemoveCoinsCommand());
+        getCommand("payerme").setExecutor(new PayCommand());
         Bukkit.getPluginManager().registerEvents(new ConnectionListener(), this);
     }
 

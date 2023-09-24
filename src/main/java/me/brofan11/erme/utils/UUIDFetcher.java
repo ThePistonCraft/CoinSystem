@@ -1,4 +1,4 @@
-package de.coooding.coinsapi.utils;
+package me.brofan11.erme.utils;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

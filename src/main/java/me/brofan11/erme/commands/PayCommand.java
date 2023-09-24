@@ -1,7 +1,7 @@
-package de.coooding.coinsapi.commands;
+package me.brofan11.erme.commands;
 
-import de.coooding.coinsapi.CoinsAPI;
-import de.coooding.coinsapi.utils.CoinsProvider;
+import me.brofan11.erme.ErmeAPI;
+import me.brofan11.erme.utils.CoinsProvider;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -15,8 +15,8 @@ public class PayCommand implements CommandExecutor {
         final Player player = (Player) sender;
 
         if(args.length != 2) {
-            player.sendMessage(CoinsAPI.getInstance().getPrefix() + CoinsAPI.getInstance().getConfig().getString("Messages.commandSyntaxHelp")
-                    .replace("&", "§").replace("%commandSyntax%", "/pay <player> <amount>"));
+            player.sendMessage(ErmeAPI.getInstance().getPrefix() + ErmeAPI.getInstance().getConfig().getString("Messages.commandSyntaxHelp")
+                    .replace("&", "§").replace("%commandSyntax%", "/payerme <player> <amount>"));
             return true;
         }
 
@@ -25,19 +25,19 @@ public class PayCommand implements CommandExecutor {
             int amount = Integer.parseInt(args[1]);
             Player player1 = Bukkit.getPlayer(target);
             if(player1 == null) {
-                player.sendMessage(CoinsAPI.getInstance().getPrefix() + CoinsAPI.getInstance().getConfig().getString("Messages.targetIsNull")
+                player.sendMessage(ErmeAPI.getInstance().getPrefix() + ErmeAPI.getInstance().getConfig().getString("Messages.targetIsNull")
                         .replace("&", "§"));
                 return true;
             }
             if(CoinsProvider.isPlayerInDatabase(player1)) {
                 CoinsProvider.addCoins(player1, amount);
-                player1.sendMessage(CoinsAPI.getInstance().getPrefix() + CoinsAPI.getInstance().getConfig().getString("Messages.payPlayerCoinsTargetMessage")
+                player1.sendMessage(ErmeAPI.getInstance().getPrefix() + ErmeAPI.getInstance().getConfig().getString("Messages.payPlayerCoinsTargetMessage")
                         .replace("%targetPlayer%", player1.getName()).replace("%amount%", String.valueOf(amount)).replace("&", "§"));
 
-                player.sendMessage(CoinsAPI.getInstance().getPrefix() + CoinsAPI.getInstance().getConfig().getString("Messages.payPlayerCoinsPlayerMessage")
+                player.sendMessage(ErmeAPI.getInstance().getPrefix() + ErmeAPI.getInstance().getConfig().getString("Messages.payPlayerCoinsPlayerMessage")
                         .replace("%targetPlayer%", player1.getName()).replace("%amount%", String.valueOf(amount)).replace("&", "§"));
             } else {
-                player.sendMessage(CoinsAPI.getInstance().getPrefix() + CoinsAPI.getInstance().getConfig().getString("Messages.playerIsNotInDatabase")
+                player.sendMessage(ErmeAPI.getInstance().getPrefix() + ErmeAPI.getInstance().getConfig().getString("Messages.playerIsNotInDatabase")
                         .replace("&", "§"));
             }
         }catch (NumberFormatException ignored) {
